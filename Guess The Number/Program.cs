@@ -28,13 +28,18 @@ namespace Guess_The_Number
                     Console.WriteLine("Поздравляю, вы угодали.");
                     break;
                 }
+                else if(tryCount == 0)
+                {
+                    Console.WriteLine("Вы проиграли.");
+                    break;
+                }
                 else if(tryCount == 1)
                 {
                     Console.WriteLine($"Призовите на помощ всё своё везение, это последняя попытка.");
                 }
                 else 
                 {
-                    Console.WriteLine("Вы не угодали, попробуйте еще раз");
+                    Console.WriteLine("Вы не угодали, попробуйте еще раз.");
                     Console.WriteLine($"Остальсь попыток: {tryCount}");
                 }
             }
