@@ -7,16 +7,17 @@ namespace Guess_The_Number
     {
         public static void Main(string[] args)
         {
-            int number,lower,longer;
+            int number,low,high;
             int tryCount = 5;
             Random rand = new Random();
+            int minSpread = 1, maxSpread = 10;
             int userInput;
             
             number = rand.Next(0, 101);
-            lower = rand.Next(number - 10, number - 1);
-            longer = rand.Next(number + 1, number + 10);
+            low = rand.Next(number - maxSpread, number - minSpread);
+            high = rand.Next(number + minSpread, number + maxSpread);
             
-            Console.WriteLine($"Мы загадали вам число. Оно больше {lower}, но меньше {longer}");
+            Console.WriteLine($"Мы загадали вам число. Оно больше {low}, но меньше {high}");
             Console.WriteLine($"У вас есть {tryCount} попыток.");
             Console.WriteLine("Что это за число?");
             
@@ -28,13 +29,13 @@ namespace Guess_The_Number
 
                 if (userInput == number)
                 {
-                    Console.WriteLine($"Поздравляю, вы смогли угодать с {i}-ой попытки.");
+                    Console.WriteLine($"Поздравляю, вы смогли угадать с {i}-ой попытки.");
                     break;
                 }
                 else if(tryCount == i)
                 {
                     Console.WriteLine("Вы проиграли.");
-                    Console.WriteLine($"Было загадано чило {number}.");
+                    Console.WriteLine($"Было загадано число {number}.");
                     break;
                 }
                 else if(i == tryCount - 1)
