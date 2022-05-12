@@ -7,13 +7,18 @@ namespace Guess_The_Number
     {
         public static void Main(string[] args)
         {
-            int number,low,high;
-            int tryCount = 5;
             Random rand = new Random();
-            int minSpread = 1, maxSpread = 10;
+            int number;
+            int low;
+            int high;
+            int tryCount = 5;
+            int minNumber = 1;
+            int maxNumber = 101;
+            int minSpread = 1;
+            int maxSpread = 10;
             int userInput;
             
-            number = rand.Next(0, 101);
+            number = rand.Next(minNumber, maxNumber);
             low = rand.Next(number - maxSpread, number - minSpread);
             high = rand.Next(number + minSpread, number + maxSpread);
             
